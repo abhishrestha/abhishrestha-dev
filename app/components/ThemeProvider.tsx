@@ -13,8 +13,8 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
-  const [systemTheme, setSystemTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>('light');
+  const [systemTheme, setSystemTheme] = useState<Theme>('light');
   const [mounted, setMounted] = useState(false);
 
   // Listen for system theme changes
@@ -49,26 +49,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
           root.classList.remove('dark');
         }
       } else {
-        // Respect system theme by default
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = prefersDark ? 'dark' : 'light';
-        setTheme(initialTheme);
-        if (initialTheme === 'dark') {
-          root.classList.add('dark');
-        } else {
-          root.classList.remove('dark');
-        }
-      }
-    } catch (error) {
-      // Fallback to system preference if localStorage fails
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const initialTheme = prefersDark ? 'dark' : 'light';
-      setTheme(initialTheme);
-      if (initialTheme === 'dark') {
-        root.classList.add('dark');
-      } else {
+        setTheme('light');
         root.classList.remove('dark');
       }
+    } catch (error) {
+      setTheme('light');
+      root.classList.remove('dark');
     }
   }, []);
 

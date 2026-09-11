@@ -4,8 +4,17 @@ import { Achievements } from "./components/Achievements";
 import { Timer } from "./components/Timer";
 import { SummaryButton } from "./components/SummaryButton";
 import { VisitorCounter } from "./components/VisitorCounter";
+import { PortfolioLogin } from "./components/PortfolioLogin";
+import { cookies } from "next/headers";
+import { isValidAccessToken, PORTFOLIO_COOKIE } from "./lib/auth";
 
-export default function Home() {
+export default async function Home() {
+  const cookieStore = await cookies();
+
+  if (!isValidAccessToken(cookieStore.get(PORTFOLIO_COOKIE)?.value)) {
+    return <PortfolioLogin />;
+  }
+
   return (
     <main className="min-h-screen text-gray-900 dark:text-[#ededed] relative z-10 bg-transparent">
       <ThemeToggle />
@@ -16,30 +25,15 @@ export default function Home() {
         {/* Hero Section */}
         <section className="mb-20">
           <div className="flex items-start gap-4 mb-6">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-2xl font-bold text-black dark:text-black avatar-glow">
-              a
-            </div>
+            <SummaryButton>
+              <span className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-2xl font-bold text-black dark:text-black avatar-glow">a</span>
+            </SummaryButton>
             <div>
               <h1 className="text-5xl md:text-6xl font-bold mb-3">abhishrestha</h1>
-              <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
-                <Link href="https://linkedin.com/in/abhishrestha-tiwari" target="_blank" className="hover:text-green-500 dark:hover:text-green-400 transition-colors">
-                  LinkedIn
-                </Link>
-                <Link href="https://github.com/abhishrestha" target="_blank" className="hover:text-green-500 dark:hover:text-green-400 transition-colors">
-                  GitHub
-                </Link>
-                <a href="mailto:abhishrestha.primary@gmail.com" className="hover:text-green-500 dark:hover:text-green-400 transition-colors">
-                  Email
-                </a>
-              </div>
+              <a href="mailto:abhishrestha.primary@gmail.com" className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors">Email</a>
             </div>
           </div>
-          <div className="flex items-center gap-4 flex-wrap">
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              i'm abhishrestha :)
-            </p>
-            <SummaryButton />
-          </div>
+          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">i&apos;m abhishrestha :)</p>
         </section>
 
         {/* What I Do Section */}
@@ -53,7 +47,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-white font-bold text-sm mt-1">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-white font-bold text-sm mt-1">
                   G
                 </div>
                 <div className="flex-1">
@@ -64,9 +58,38 @@ export default function Home() {
                       The Linux Foundation
                     </Link>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Selected for Google Summer of Code 2026 • Remote</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">May 2026 – Sep 2026 • Remote</p>
                   <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                     Selected as a Google Summer of Code contributor with The Linux Foundation, contributing to open-source development and collaborating with maintainers across the ecosystem.
+                  </p>
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    <Link href="https://drive.google.com/file/d/1MHUNp-3jdIzmmhWkjspL-qtq51jK285c/view?usp=sharing" target="_blank" aria-label="Open GSoC completion certificate" className="group w-36 border border-transparent rounded-lg overflow-hidden hover:opacity-80 transition-opacity">
+                      <img src="https://drive.google.com/thumbnail?id=1MHUNp-3jdIzmmhWkjspL-qtq51jK285c&sz=w400" alt="GSoC completion certificate" className="h-20 w-full object-cover group-hover:scale-105 transition-transform" />
+                      <p className="px-1 pt-1 text-[11px] font-semibold">GSoC certificate ↗</p>
+                    </Link>
+                    <Link href="https://medium.com/@abhishrestha.primary/fuzzing-cpython-one-panic-at-a-time-my-gsoc26-journey-with-openprinting-c7582ff000a7" target="_blank" aria-label="Read the GSoC journey on Medium" className="group w-36 border border-transparent rounded-lg overflow-hidden hover:opacity-80 transition-opacity">
+                      <div className="h-20 bg-[#f4f4f4] flex items-center justify-center"><span className="text-4xl font-serif text-black">M</span></div>
+                      <p className="px-1 pt-1 text-[11px] font-semibold">GSoC article ↗</p>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
+              <div className="flex items-start gap-4 mb-2">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold text-sm mt-1">
+                  P
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                    <h3 className="text-xl font-semibold">Software Developer</h3>
+                    <span className="text-gray-400">•</span>
+                    <span className="text-green-500 dark:text-green-400">Spatial Pleasure Japan</span>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Aug 12, 2026 – Present • Remote from India</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                    Building thoughtful software experiences with a distributed team across Japan and India.
                   </p>
                 </div>
               </div>
@@ -74,7 +97,26 @@ export default function Home() {
 
             <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-sm mt-1">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm mt-1">
+                  E
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                    <h3 className="text-xl font-semibold">IT System Expert</h3>
+                    <span className="text-gray-400">•</span>
+                    <span className="text-green-500 dark:text-green-400">Ericsson India Pvt Limited</span>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Jul 20, 2026 – Present • Gurugram, Haryana, India</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                    Supporting reliable IT systems and the infrastructure that keeps teams moving.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
+              <div className="flex items-start gap-4 mb-2">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-sm mt-1">
                   S
                 </div>
                 <div className="flex-1">
@@ -88,7 +130,7 @@ export default function Home() {
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">May 2025 – Present • Remote</p>
                   <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                     Documented over 1000+ interview experiences across various software engineering domains to support 5,000+ learners. 
-                    Enhanced Scaler's learning platform by refining modules on system design, data structures, and core tech concepts. 
+                    Enhanced Scaler&apos;s learning platform by refining modules on system design, data structures, and core tech concepts. 
                     Curated and added 2,500+ coding and problem-solving questions to the companion platform.
                   </p>
                 </div>
@@ -97,7 +139,7 @@ export default function Home() {
 
             <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center text-white font-bold text-sm mt-1">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center text-white font-bold text-sm mt-1">
                   L
                 </div>
                 <div className="flex-1">
@@ -120,7 +162,7 @@ export default function Home() {
 
             <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-white font-bold text-sm mt-1">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-white font-bold text-sm mt-1">
                   T
                 </div>
                 <div className="flex-1">
@@ -144,7 +186,14 @@ export default function Home() {
 
         {/* Projects Section */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-6 text-green-500 dark:text-green-400">projects</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <Link href="https://github.com/abhishrestha" target="_blank" aria-label="Visit abhishrestha on GitHub" className="group w-14 border border-transparent rounded-lg overflow-hidden hover:opacity-80 transition-opacity">
+              <div className="h-12 bg-[#171717] flex items-center justify-center overflow-hidden">
+                <img src="https://github.com/abhishrestha.png?size=120" alt="" className="w-9 h-9 rounded-full" />
+              </div>
+            </Link>
+            <h2 className="text-3xl font-bold text-green-500 dark:text-green-400">projects</h2>
+          </div>
           <div className="space-y-6">
             <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-6 border-glow transition-all duration-300">
               <div className="flex items-start justify-between mb-3">

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export function SummaryButton() {
+export function SummaryButton({ children }: { children?: React.ReactNode }) {
   const [summary, setSummary] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
@@ -37,15 +37,12 @@ export function SummaryButton() {
       <button
         onClick={handleSummarize}
         disabled={loading}
-        className="group relative px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 
-          bg-gradient-to-r from-green-500 to-emerald-600 text-white 
-          hover:from-green-600 hover:to-emerald-700 hover:shadow-lg hover:shadow-green-500/25
-          dark:from-green-400 dark:to-emerald-500 dark:text-black
-          dark:hover:from-green-500 dark:hover:to-emerald-600
-          disabled:opacity-70 disabled:cursor-wait
-          inline-flex items-center gap-2"
+        aria-label={children ? "Open AI summary" : undefined}
+        className={children
+          ? "disabled:opacity-70 disabled:cursor-wait"
+          : "group relative px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 hover:shadow-lg hover:shadow-green-500/25 dark:from-green-400 dark:to-emerald-500 dark:text-black dark:hover:from-green-500 dark:hover:to-emerald-600 disabled:opacity-70 disabled:cursor-wait inline-flex items-center gap-2"}
       >
-        {loading ? (
+        {children ? children : loading ? (
           <>
             <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
