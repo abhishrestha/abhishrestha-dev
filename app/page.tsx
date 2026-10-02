@@ -4,17 +4,8 @@ import { Achievements } from "./components/Achievements";
 import { Timer } from "./components/Timer";
 import { SummaryButton } from "./components/SummaryButton";
 import { VisitorCounter } from "./components/VisitorCounter";
-import { PortfolioLogin } from "./components/PortfolioLogin";
-import { cookies } from "next/headers";
-import { isValidAccessToken, PORTFOLIO_COOKIE } from "./lib/auth";
 
 export default async function Home() {
-  const cookieStore = await cookies();
-
-  if (!isValidAccessToken(cookieStore.get(PORTFOLIO_COOKIE)?.value)) {
-    return <PortfolioLogin />;
-  }
-
   return (
     <main className="min-h-screen text-gray-900 dark:text-[#ededed] relative z-10 bg-transparent">
       <ThemeToggle />
