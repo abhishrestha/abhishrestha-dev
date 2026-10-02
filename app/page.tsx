@@ -38,50 +38,36 @@ export default async function Home() {
           <div className="space-y-6">
             <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-white font-bold text-sm mt-1">
-                  G
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-slate-500 to-slate-800 flex items-center justify-center text-white font-bold text-sm mt-1">
+                  S
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-baseline gap-2 mb-1">
-                    <h3 className="text-xl font-semibold">GSoC Contributor</h3>
+                    <h3 className="text-xl font-semibold">Software Engineer</h3>
                     <span className="text-gray-400">•</span>
-                    <Link href="https://www.linuxfoundation.org" target="_blank" className="text-green-500 dark:text-green-400 hover:underline">
-                      The Linux Foundation
-                    </Link>
+                    <span className="text-green-500 dark:text-green-400">Stealth Startup · Part-time</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">May 2026 – Sep 2026 • Remote</p>
-                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                    Selected as a Google Summer of Code contributor with The Linux Foundation, contributing to open-source development and collaborating with maintainers across the ecosystem.
-                  </p>
-                  <div className="flex flex-wrap gap-3 mt-4">
-                    <Link href="https://drive.google.com/file/d/1MHUNp-3jdIzmmhWkjspL-qtq51jK285c/view?usp=sharing" target="_blank" aria-label="Open GSoC completion certificate" className="group w-36 border border-transparent rounded-lg overflow-hidden hover:opacity-80 transition-opacity">
-                      <img src="https://drive.google.com/thumbnail?id=1MHUNp-3jdIzmmhWkjspL-qtq51jK285c&sz=w400" alt="GSoC completion certificate" className="h-20 w-full object-cover group-hover:scale-105 transition-transform" />
-                      <p className="px-1 pt-1 text-[11px] font-semibold">GSoC certificate ↗</p>
-                    </Link>
-                    <Link href="https://medium.com/@abhishrestha.primary/fuzzing-cpython-one-panic-at-a-time-my-gsoc26-journey-with-openprinting-c7582ff000a7" target="_blank" aria-label="Read the GSoC journey on Medium" className="group w-36 border border-transparent rounded-lg overflow-hidden hover:opacity-80 transition-opacity">
-                      <div className="h-20 bg-[#f4f4f4] flex items-center justify-center"><span className="text-4xl font-serif text-black">M</span></div>
-                      <p className="px-1 pt-1 text-[11px] font-semibold">GSoC article ↗</p>
-                    </Link>
-                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Aug 2026 – Present · 3 mos · Tokyo, Japan · Remote</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Software Infrastructure, Software Design and +3 skills</p>
                 </div>
               </div>
             </div>
 
             <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold text-sm mt-1">
-                  P
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-white font-bold text-sm mt-1">
+                  &lt;/&gt;
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-baseline gap-2 mb-1">
-                    <h3 className="text-xl font-semibold">Software Developer</h3>
+                    <h3 className="text-xl font-semibold">Open Source Developer</h3>
                     <span className="text-gray-400">•</span>
-                    <span className="text-green-500 dark:text-green-400">Spatial Pleasure Japan</span>
+                    <span className="text-green-500 dark:text-green-400">Google Summer of Code · Part-time</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Aug 12, 2026 – Present • Remote from India</p>
-                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                    Building thoughtful software experiences with a distributed team across Japan and India.
-                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">May 2026 – Sep 2026 · 5 mos · San Francisco, California, United States · Remote</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Open Source Contributor @The Linux Foundation</p>
+                  <Link href="https://drive.google.com/file/d/1MHUNp-3jdIzmmhWkjspL-qtq51jK285c/view?usp=sharing" target="_blank" className="inline-block mt-3 text-sm text-green-500 dark:text-green-400 hover:underline">GSoC Acceptance Letter ↗</Link>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mt-3">Version Control, Open-Source Software and +3 skills</p>
                 </div>
               </div>
             </div>
@@ -89,41 +75,33 @@ export default async function Home() {
             <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm mt-1">
-                  E
+                  S
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-baseline gap-2 mb-1">
-                    <h3 className="text-xl font-semibold">IT System Expert</h3>
+                    <h3 className="text-xl font-semibold">Technical Content Developer</h3>
                     <span className="text-gray-400">•</span>
-                    <span className="text-green-500 dark:text-green-400">Ericsson India Pvt Limited</span>
+                    <span className="text-green-500 dark:text-green-400">Scaler · Part-time</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Jul 20, 2026 – Present • Gurugram, Haryana, India</p>
-                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                    Supporting reliable IT systems and the infrastructure that keeps teams moving.
-                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">May 2025 – Aug 2026 · 1 yr 4 mos · Bengaluru, Karnataka, India · Remote</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Technical content, Content Strategy and +1 skill</p>
                 </div>
               </div>
             </div>
 
             <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-sm mt-1">
-                  S
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-500 to-gray-800 flex items-center justify-center text-white font-bold text-sm mt-1">
+                  T
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-baseline gap-2 mb-1">
-                    <h3 className="text-xl font-semibold">Technical Content Writer Intern</h3>
+                    <h3 className="text-xl font-semibold">Desktop App Developer</h3>
                     <span className="text-gray-400">•</span>
-                    <Link href="https://www.linkedin.com/school/scalerofficial/posts/?feedView=all" target="_blank" className="text-green-500 dark:text-green-400 hover:underline">
-                      Scaler
-                    </Link>
+                    <span className="text-green-500 dark:text-green-400">Tech Instance · Part-time</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">May 2025 – Present • Remote</p>
-                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                    Documented over 1000+ interview experiences across various software engineering domains to support 5,000+ learners. 
-                    Enhanced Scaler&apos;s learning platform by refining modules on system design, data structures, and core tech concepts. 
-                    Curated and added 2,500+ coding and problem-solving questions to the companion platform.
-                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Sep 2025 – Jan 2026 · 5 mos · Bhubaneswar, Odisha, India · Remote</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Back-End Web Development and Version Control</p>
                 </div>
               </div>
             </div>
@@ -141,12 +119,8 @@ export default async function Home() {
                       Lumio
                     </Link>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Aug 2025 – Sep 2025 • San Francisco, CA • Remote</p>
-                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                  Optimized React Native app performance by refactoring heavy UI renders to `FlatList`, memoizing callbacks, 
-                  and debouncing API calls to reduce re-renders and network overhead. Improved app stability by fixing repeated `useEffect` executions, interval leaks, and state synchronization issues. Enhanced accessibility with proper labels and improved UX through form validation and UI alignment fixes. Delivered scalable,
-                  maintainable frontend improvements across chat, meals, steps, and health tracking modules.
-                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Aug 2025 – Sep 2025 · 2 mos · San Francisco, California, United States · Remote</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Mobile Applications, Front-End Development and +4 skills</p>
                 </div>
               </div>
             </div>
@@ -160,15 +134,30 @@ export default async function Home() {
                   <div className="flex flex-wrap items-baseline gap-2 mb-1">
                     <h3 className="text-xl font-semibold">React Native Developer</h3>
                     <span className="text-gray-400">•</span>
-                    <Link href="https://www.linkedin.com/company/tech-instance/posts/?feedView=all" target="_blank" className="text-green-500 dark:text-green-400 hover:underline">
-                      TechInstance
-                    </Link>
+                    <span className="text-green-500 dark:text-green-400">Tech Instance · Part-time</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Mar 2025 – Apr 2025 • Remote</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Mar 2025 – Apr 2025 · 2 mos · Bhubaneswar, Odisha, India · Remote</p>
                   <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                    Implemented 7 production screens and 15 reusable components, boosting code-reuse by 40% and shaving 1 sprint off release cycles. 
-                    Integrated Google Maps + H3 geospatial indexing; improved pickup-ETA accuracy from ±900 m to ±85 m and cut Maps-API spend by 22%.
+                    Contributed to the development of a ride-sharing application by implementing key features and functionalities to enhance user experience and platform performance.
                   </p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mt-3">Front-End Development, Version Control and +1 skill</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
+              <div className="flex items-start gap-4 mb-2">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-white font-bold text-sm mt-1">
+                  T
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                    <h3 className="text-xl font-semibold">Frontend Developer</h3>
+                    <span className="text-gray-400">•</span>
+                    <span className="text-green-500 dark:text-green-400">Wefofy · Part-time</span>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Mar 2025 – Apr 2025 · 2 mos · Noida, Uttar Pradesh, India · Remote</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">Front-End Design, Front-end Coding and +3 skills</p>
                 </div>
               </div>
             </div>
